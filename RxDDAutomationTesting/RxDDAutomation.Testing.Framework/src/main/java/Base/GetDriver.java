@@ -6,13 +6,15 @@ import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.ie.InternetExplorerDriver;
 
-import java.sql.Driver;
 
 public class GetDriver {
-    public static WebDriver driver;
 
-    protected WebDriver GetDriver(){
-        return driver;
+    protected static WebDriver InvokeDriver(String driverBrowser){
+        return switch (driverBrowser) {
+            case "InternetExplorer" -> GetIEDriver();
+            case "FireFox" -> GetFirefoxDriver();
+            default -> GetChromeDriver();
+        };
     }
     private static ChromeOptions GetChromeOptions(){
         ChromeOptions options = new ChromeOptions();
