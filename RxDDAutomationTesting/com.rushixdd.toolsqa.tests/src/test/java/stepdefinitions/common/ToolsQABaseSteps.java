@@ -1,13 +1,12 @@
-package StepDefinition.Common;
+package stepdefinitions.common;
 
-import Core.DriverActions.Common.ToolsQABase;
+import core.DriverActions.common.ToolsQABase;
 import io.cucumber.java.en.*;
 public class ToolsQABaseSteps {
-
     private ToolsQABase toolsQABase;
 
-    public ToolsQABaseSteps(ToolsQABase toolsQABase){
-        this.toolsQABase = toolsQABase;
+    public ToolsQABaseSteps(){
+        this.toolsQABase = new ToolsQABase();
     }
 
     @Given("Navigate to toolsqa")
