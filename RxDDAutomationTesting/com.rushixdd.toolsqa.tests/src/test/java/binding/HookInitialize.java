@@ -15,7 +15,6 @@ public class HookInitialize {
     private Base base;
 
     public HookInitialize() {
-        this.testContextHolder = new TestContextHolder(); // Initialize TestContextHolder
         this.base = new Base(); // Initialize Base which will handle WebDriver setup and cleanup
     }
 

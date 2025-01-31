@@ -4,11 +4,9 @@ import core.TestContextHolder;
 import org.openqa.selenium.WebDriver;
 
 public abstract class Base {
-    private TestContextHolder testContextHolder;
     WebDriver driver;
 
     public Base() {
-        this.testContextHolder = new TestContextHolder();
-        driver = testContextHolder.getContext().getDriver();
+        this.driver = TestContextHolder.CONTEXT_HOLDER.getContext().getDriver();
     }
 }

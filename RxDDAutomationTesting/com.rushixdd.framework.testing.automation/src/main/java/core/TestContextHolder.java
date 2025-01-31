@@ -1,8 +1,8 @@
 package core;
 
-public class TestContextHolder {
-
-    private ThreadLocal<TestContext> context = ThreadLocal.withInitial(TestContext::new);
+public enum TestContextHolder {
+    CONTEXT_HOLDER;
+    private final ThreadLocal<TestContext> context = ThreadLocal.withInitial(TestContext::new);
 
     public TestContext getContext() {
         return context.get();
