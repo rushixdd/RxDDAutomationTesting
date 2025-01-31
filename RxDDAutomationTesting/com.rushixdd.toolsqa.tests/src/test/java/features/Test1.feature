@@ -3,4 +3,4 @@ Feature: Test 1
     Given Navigate to toolsqa
 
   Scenario: Test Scenario 1
-    And Click on edit
+    When Create new page

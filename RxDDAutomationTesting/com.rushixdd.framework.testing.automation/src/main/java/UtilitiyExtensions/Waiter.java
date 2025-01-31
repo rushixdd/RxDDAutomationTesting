@@ -1,25 +1,16 @@
 package UtilitiyExtensions;
 
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.ui.WebDriverWait;
-
-import java.time.Duration;
-
 public class Waiter {
-    private WebDriver driver;
-
-    public Waiter(WebDriver driver) {
-        this.driver = driver;
+    public static void waitMilliseconds(long milliseconds) {
+        try {
+            Thread.sleep(milliseconds);
+        } catch (InterruptedException e) {
+            Thread.currentThread().interrupt();  // Restore interrupted state
+        }
     }
 
-    public WebElement waitForElement(WebDriver driver,By locator, WaitCondition condition, Duration timeout) {
-        WebDriverWait wait = new WebDriverWait(driver, timeout);
-        return wait.until(condition.getCondition(locator));
-    }
-
-    public WebElement waitForElement(By locator, WaitCondition condition) {
-        return null;
+    // New static method to wait for a specified number of seconds
+    public static void waitSeconds(long seconds) {
+        waitMilliseconds(seconds * 1000);  // Convert seconds to milliseconds
     }
 }

@@ -1,0 +1,9 @@
+{
+  "hostname": "localhost",
+  "port": 4444,
+  "path": "/",
+  "BaseURL": "https://www.toolsqa.com/",
+  "headless": false,
+  "browser": "chrome",
+  "logPath": "/"
+}
